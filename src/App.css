@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+.resturantList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+}
+.loader {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+}
+.button-see-more {
+  margin: 40px;
+}
