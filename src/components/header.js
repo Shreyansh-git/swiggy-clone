@@ -1,18 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../styles/header.css";
 
 const Header = ({ resto, setFilteredRestro }) => {
   const [value, setValue] = useState("");
 
-  const updateResto = (e) => {
-    console.log(e);
-    setValue(e.target.value);
-    setFilteredRestro(
-      resto.filter((item) =>
-        item.info.name.toLowerCase().includes(e.target.value.toLowerCase())
-      )
-    );
-  };
+  useEffect(() => {
+    let timer = setTimeout(() => {
+      console.log(value);
+      setFilteredRestro(
+        resto.filter((item) =>
+          item.info.name.toLowerCase().includes(value.toLowerCase())
+        )
+      );
+    }, 500);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [value, resto, setFilteredRestro]);
+
   return (
     <div className="headerContainer">
       <div className="headerComponentLeft">
@@ -29,7 +34,7 @@ const Header = ({ resto, setFilteredRestro }) => {
             placeholder="Search for resturants"
             value={value}
             onChange={(e) => {
-              updateResto(e);
+              setValue(e.target.value);
             }}
           />
         </div>
