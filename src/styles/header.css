@@ -18,3 +18,31 @@
   justify-content: space-between;
   width: 500px;
 }
+.input-search {
+  display: flex;
+  border: 2px solid grey;
+  border-radius: 40px;
+  padding-right: 100px;
+  padding-left: 10px;
+  padding-block: 12px;
+}
+.dropdown {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 340px;
+}
+.dropdown-list {
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  border-left: 1px solid black;
+  background: white;
+}
+.searchImage {
+  width: 50px;
+  height: 50px;
+  padding-right: 20px;
+}
